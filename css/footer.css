@@ -28,24 +28,26 @@
 }
 .footer .social-icon {
   transition: all 0.2s;
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
 }
 .footer .social-icon:hover {
   transform: scale(1.12);
 }
 .footer .social-icon__facebook {
-  background: url("../img/footer/icon-facebook-dark.svg");
+  background: url("../img/footer/icon-facebook.svg");
   width: 30px;
   height: 30px;
   background-size: cover;
 }
 .footer .social-icon__youtube {
-  background: url("../img/footer/icon-youtube-dark.svg");
+  background: url("../img/footer/icon-youtube.svg");
   background-size: cover;
+  width: 35px;
+  height: 35px;
 }
 .footer .social-icon__whatsapp {
-  background: url("../img/footer/icon-whatsapp-dark.svg");
+  background: url("../img/footer/icon-whatsapp.svg");
   background-size: cover;
 }
 
@@ -101,7 +103,7 @@
   font-size: 13px;
   margin-top: 30px;
   padding-top: 15px;
-  border-top: 1px solid #343434;
+  border-top: 1px solid #363636;
   color: #a1a1a6;
 }
 

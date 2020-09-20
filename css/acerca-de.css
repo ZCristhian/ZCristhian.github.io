@@ -17,13 +17,13 @@
   align-items: center;
 }
 .about-hero__image {
-  max-height: 320px;
+  max-height: 290px;
 }
 .about-hero__wrapper {
   margin-left: 30px;
 }
 .about-hero__title {
-  font-size: 6rem;
+  font-size: 5rem;
   font-weight: 600;
   padding-top: 20px;
   margin-bottom: 12px;
@@ -56,7 +56,7 @@
 }
 .container-modules__title {
   margin-bottom: 40px;
-  font-size: 5rem;
+  font-size: 4rem;
   text-align: center;
   color: #f5f5f7;
 }
@@ -90,12 +90,12 @@
   grid-area: reportes;
 }
 .modules__image {
-  width: 200px;
-  height: 200px;
+  width: 150px;
+  height: 150px;
   filter: contrast(120%) brightness(90%);
 }
 .modules__title {
-  font-size: 3rem;
+  font-size: 2.6rem;
   margin-top: 15px;
   text-align: center;
   color: #f5f5f7;
@@ -125,7 +125,7 @@
   text-align: center;
 }
 .conections__title {
-  font-size: 5rem;
+  font-size: 4rem;
   margin-bottom: 30px;
   color: #f5f5f7;
 }
@@ -135,7 +135,7 @@
   max-width: 70rem;
   display: flex;
   justify-content: space-between;
-  border-bottom: 1px solid #343434;
+  border-bottom: 1px solid #4f4f4f;
   margin-bottom: 30px;
 }
 .tabnav__item {
@@ -267,11 +267,11 @@
 }
 .security__title {
   color: #f5f5f7;
-  font-size: 5rem;
+  font-size: 4rem;
   margin-bottom: 25px;
 }
 .security__image {
-  max-width: 400px;
+  max-width: 300px;
   margin-bottom: 20px;
   filter: brightness(80%) contrast(130%);
 }
@@ -279,6 +279,8 @@
   color: #bebebe;
   font-size: 1.7rem;
   display: block;
+  max-width: 650px;
+  margin: 0 auto;
 }
 
 .section-internet {
@@ -292,7 +294,7 @@
   text-align: center;
 }
 .internet__title {
-  font-size: 3.2rem;
+  font-size: 2.8rem;
   color: #f5f5f7;
   margin-bottom: 20px;
 }
