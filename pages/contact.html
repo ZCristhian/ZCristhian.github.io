@@ -8,12 +8,12 @@
   <meta name="description" content="Sistema de Administracion Logistica – S.I.A.L Este Sistema es una herramienta informática, diseñado para uso del área de ABASTECIMIENTOS y ALMACEN de las entidades del Gobierno Local, Gobierno Regional y Gobierno Nacional">
   <meta name="keywords" content="Sistema SIAL,SialSoft.pe,sialsoft,SIAL,Sistema de Logistica,Sistema de Abastecimiento,Sistema de de Control de Combustible,Sistema de Almacen">
   <link rel="shortcut icon" href="../favicon.png" type="image/x-icon">
-  <link rel="stylesheet" href="../css/contact.css">
+  <link rel="stylesheet" href="../css/contact.css?v-1.0">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
   <title>Sial - Contacto</title>
 </head>
 
-<body>
+<body id="body">
   <!-------------- MENU DE NAVEGACION -------------->
   <header class="header" id="header">
     <nav class="main-nav">
@@ -25,7 +25,24 @@
           <a href="/" class="main-nav__link">Inicio</a>
         </li>
         <li class="main-nav__item">
-          <a href="./acerca_de.html" class="main-nav__link">Acerca de</a>
+          <a href="./acerca_de.html" class="main-nav__link">Productos</a>
+          <ul class="productos__list">
+            <li class="productos__item">
+              <a class="productos__link" href="./acerca_de.html#modulos">M. Abastecimiento</a>
+            </li>
+            <li class="productos__item">
+              <a class="productos__link" href="./acerca_de.html#modulos">M. Almacén</a>
+            </li>
+            <li class="productos__item">
+              <a class="productos__link" href="./acerca_de.html#modulos">M. Combustible</a>
+            </li>
+            <li class="productos__item">
+              <a class="productos__link" href="./acerca_de.html#modulos">M. Caja/Recaudacion</a>
+            </li>
+            <li class="productos__item">
+              <a class="productos__link" href="./acerca_de.html#modulos">M. Reportes</a>
+            </li>
+          </ul>
         </li>
         <li class="main-nav__item">
           <a href="./clients.html" class="main-nav__link">Clientes</a>
@@ -33,15 +50,10 @@
         <li class="main-nav__item">
           <a href="./manuales.html" class="main-nav__link">Manuales</a>
         </li>
-        <li class="main-nav__item main-nav__item--hidden">
-          <a href="./contact.html" class="main-nav__link--mobile">
-            <button class="main-nav__btn">Contáctenos</button>
-          </a>
+        <li class="main-nav__item main-nav__item--focus">
+          <a href="./contact.html" class="main-nav__link main-nav__link">Contacto</a>
         </li>
       </ul>
-      <a href="./contact.html" class="main-nav__link--large">
-        <button class="main-nav__btn">Contáctenos</button>
-      </a>
       <div class="mobile-menu">
         <span class="line line-top"></span>
         <span class="line line-medium"></span>
@@ -56,35 +68,6 @@
       <div class="hero">
         <div class="hero__wrapper">
           <h1 class="hero__title">Contactando a SIAL</h1>
-        </div>
-        <div class="cards">
-          <div class="card">
-            <div class="card__box">
-              <div class="card__image ventas"></div>
-              <h3 class="card__title">Contacto de Ventas</h3>
-              <p class="card__copy">
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
-              </p>
-            </div>
-          </div>
-          <div class="card">
-            <div class="card__box">
-              <div class="card__image support"></div>
-              <h3 class="card__title">Soporte de Contacto</h3>
-              <p class="card__copy">
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
-              </p>
-            </div>
-          </div>
-          <div class="card">
-            <div class="card__box">
-              <div class="card__image function"></div>
-              <h3 class="card__title">Solicitar una Función</h3>
-              <p class="card__copy">
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
-              </p>
-            </div>
-          </div>
         </div>
       </div>
     </section>

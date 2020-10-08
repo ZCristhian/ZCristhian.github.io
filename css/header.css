@@ -4,7 +4,7 @@ html {
 }
 
 body {
-  background: #111111;
+  background: #141418;
 }
 
 a {
@@ -15,12 +15,24 @@ button {
   font-family: inherit;
 }
 
-.header .main-nav__link--focus {
-  color: #fff;
+.body-hidden {
+  overflow: hidden;
 }
-.header .main-nav__link--focus::after {
-  width: 100%;
-  height: 4px;
+
+.header .main-nav__item--focus::before, .header .main-nav__item--focus::after {
+  opacity: 1;
+}
+.header .main-nav__item--focus .main-nav__link {
+  color: #fff;
+  background: #141418;
+}
+.header .main-nav__item--focus .main-nav__link::after, .header .main-nav__item--focus .main-nav__link::before {
+  opacity: 1;
+}
+
+[class=main-nav__item]:hover .main-nav__link {
+  z-index: 3;
+  background: #a7063c;
 }
 
 /* ESTILOS PARA RESETEAR EL DE LOS NAVEGADORES */
@@ -42,17 +54,15 @@ button {
 .header {
   user-select: none;
   width: 100%;
-  height: 75px;
-  background: rgba(0, 0, 0, 0.75);
-  backdrop-filter: saturate(180%) blur(20px);
-  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  height: 45px;
+  background: #D5003B;
   position: fixed;
   z-index: 1000;
   top: 0;
 }
 
 .main-nav {
-  max-width: 120rem;
+  max-width: 140rem;
   height: 100%;
   margin: 0 auto;
   padding: 0 30px;
@@ -61,90 +71,108 @@ button {
   align-items: center;
 }
 .main-nav__logo {
-  width: 12rem;
+  width: 9.5rem;
   user-select: none;
+  filter: drop-shadow(2px 4px 4px #3f0012);
 }
 .main-nav__list {
-  width: 33rem;
   height: 100%;
   display: flex;
   justify-content: space-between;
 }
 .main-nav__item {
   height: 100%;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
 }
-.main-nav__item--hidden {
-  display: none;
+.main-nav__item::before, .main-nav__item::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: #D5003B;
+  bottom: 0;
+  opacity: 0;
+  z-index: 1;
+  border-radius: 50%;
+}
+.main-nav__item::before {
+  right: 100%;
+}
+.main-nav__item::after {
+  left: 100%;
 }
 .main-nav__link {
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #bebebe;
-  font-size: 16px;
+  color: #e6e6e6;
+  font-size: 1.6rem;
+  border-radius: 15px 15px 0 0;
   font-weight: 400;
-  transition: all 300ms;
   position: relative;
   user-select: none;
-  padding: 0 1px;
+  padding: 0px 20px 0;
+  position: relative;
 }
-.main-nav__link::after {
+.main-nav__link::after, .main-nav__link::before {
   content: "";
   position: absolute;
-  width: 0;
-  height: 2.5px;
-  background: linear-gradient(90deg, #fe7b11, #fe0e95);
   bottom: 0;
-  transition: all 0.3s;
+  background: #141418;
+  width: 10px;
+  height: 10px;
+  opacity: 0;
 }
-.main-nav__link:hover {
-  color: #f0f0f0;
+.main-nav__link::after {
+  left: 100%;
 }
-.main-nav__link:hover::after {
-  transition: all 0.3s;
-  width: 100%;
+.main-nav__link::before {
+  right: 100%;
 }
-.main-nav__btn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: linear-gradient(90deg, #fe7b11, #fe0e95);
-  border-radius: 3rem;
-  border: none;
-  height: 4.4rem;
-  width: 20rem;
-  cursor: pointer;
-  transition: all 300ms;
-  color: #fff;
-  font-size: 1.7rem;
-  user-select: none;
+
+.main-nav__item:hover .productos__list {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.2s;
+  visibility: visible;
 }
-.main-nav__btn--hidden {
-  display: none;
-  margin: 0;
-  padding: 0;
+
+.productos__list {
+  flex-direction: column;
+  position: absolute;
+  width: auto;
+  top: 100%;
+  background: #a7063c;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  border-top-right-radius: 15px;
+  opacity: 0;
+  transform: translateY(-30px);
+  overflow: hidden;
+  transition: all 0.05s;
+  visibility: hidden;
 }
-.main-nav__btn:hover {
-  opacity: 0.9;
-  transform: scale(1.07);
-  box-shadow: 0px 10px 10px -10px #d10076;
+.productos__item:hover .productos__link {
+  transition: all 0.15s;
+  background: #D5003B;
+}
+.productos__link {
+  padding: 10px 20px;
+  font-size: 1.5rem;
+  color: #e6e6e6;
+  white-space: nowrap;
 }
 
 @media screen and (max-width: 1080px) {
-  .header {
-    height: 6.5rem;
-  }
-
   .main-nav {
-    max-width: 90rem;
+    max-width: 100rem;
     padding: 0 20px;
   }
   .main-nav__logo {
     width: 10rem;
-  }
-  .main-nav__list {
-    width: 31rem;
   }
 }
 @media screen and (max-width: 767px) {
@@ -152,8 +180,14 @@ button {
     height: 5.5rem;
     transition: background ease-in-out 0.3s;
   }
-  .header.active {
-    background: #000;
+  .header .main-nav__item--focus::before, .header .main-nav__item--focus::after {
+    background: #141418;
+  }
+  .header .main-nav__item--focus .main-nav__link {
+    background: #D5003B;
+  }
+  .header .main-nav__item--focus .main-nav__link::after, .header .main-nav__item--focus .main-nav__link::before {
+    background: #D5003B;
   }
   .header.active .main-nav {
     position: relative;
@@ -204,7 +238,7 @@ button {
     flex-direction: column;
     justify-content: start;
     width: 100%;
-    background: #000;
+    background: #141418;
     transition: all ease-in-out 0.4s;
     overflow: hidden;
     top: 55px;
@@ -221,7 +255,7 @@ button {
     height: 60px;
     width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
     flex-shrink: 0;
   }
@@ -229,14 +263,43 @@ button {
     height: auto;
     margin-top: 70px;
   }
+  .main-nav__item::before, .main-nav__item::after {
+    right: 0;
+    width: 50px;
+    height: 50px;
+  }
+  .main-nav__item::after {
+    left: initial;
+    top: 100%;
+  }
+  .main-nav__item::before {
+    bottom: 100%;
+  }
   .main-nav__link {
+    width: 100%;
     font-size: 1.7rem;
+    border-radius: 25px 0 0 25px;
+    justify-content: center;
   }
   .main-nav__link--large {
     display: none;
   }
+  .main-nav__link::before, .main-nav__link::after {
+    right: 0;
+    width: 25px;
+    height: 25px;
+  }
   .main-nav__link::after {
-    bottom: 20%;
+    top: 100%;
+    left: initial;
+  }
+  .main-nav__link::before {
+    bottom: 100%;
+  }
+
+  .main-nav__item:hover .productos__list {
+    opacity: 0;
+    visibility: hidden;
   }
 
   .mobile-menu {
@@ -265,6 +328,11 @@ button {
   }
   .mobile-menu .line-top {
     margin-top: -1.2rem;
+  }
+
+  [class=main-nav__item]:hover .main-nav__link {
+    z-index: 3;
+    background: initial;
   }
 }
 
